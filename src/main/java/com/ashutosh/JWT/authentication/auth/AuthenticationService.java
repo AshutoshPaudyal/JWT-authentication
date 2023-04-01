@@ -42,6 +42,7 @@ public class AuthenticationService {
                         request.getPassword()
                 )
         );
+        // ya samma pugnu vaneko authenticate vaisakya vanya ho topken generate garna lai user khojeko
         var user = repository.findByEmail(request.getEmail()).orElseThrow();
         var jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
